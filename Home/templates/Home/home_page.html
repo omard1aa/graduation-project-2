@@ -1,0 +1,593 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Diabetic Retinopathy">
+
+    <title>Diabetic Retinopathy</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Leckerli+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<br><br>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">D.R Classifier System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About &nbsp d.retinopathy</a>
+            </li>
+            <li>
+            <a class="nav-link" href="#menu">Phases</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#service">our service</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">contact</a>
+            </li>
+             <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Upload your eye scan
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">
+                &nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>          
+        <div class="dropdown-divider"></div>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#register">
+                &nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;
+            </button>
+        </div>
+      </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Login goes here...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">&nbsp;&nbsp;&nbsp;&nbsp;Close&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button type="button" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Register goes here...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">&nbsp;&nbsp;&nbsp;&nbsp;Close&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button type="button" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;Sign up&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+    <div class="container-fluid">
+        <div class="header-content-inner">
+            <h1>Welcome to Diabetic Retinopathy Classifier System</h1>
+            <h3>We are proud of providing our services to our customers.</h3>
+        </div>
+    </div>
+</div>
+<section class="bg-about bg-section" id="about">
+    <div class="container-fluid">
+        <h1 class="container-h1">About Diabetic Retinopathy</h1>
+        <div class="row">
+            <div class="col-sm-5">
+
+                <div class="hov-img">
+                    <img src="{% static "assets/macula_dr.gif" %}" alt="Delicious meals"
+                         class="hov-img-bottom img-fluid">
+                    <div class="hov-img-top hov-img-slideup">
+                        <div class="hov-img-text">
+                            <h5>Normal eye anatomy</h5>
+                            <p>Diabetic eye disease can affect many parts of the eye, including the retina, macula, lens
+                                and the optic nerve.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hov-img">
+                    <img src="{% static "assets/normal_vision_color_1.jpg" %}" style="height: 225px;"
+                         alt="Professional staff" class="hov-img-bottom img-fluid">
+                    <div class="hov-img-top hov-img-slideup">
+                        <div class="hov-img-text">
+                            <h5>Normal vision</h5>
+                            <p>The early stages of diabetic retinopathy usually have no symptoms. The disease often
+                                progresses unnoticed until it affects vision.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hov-img">
+                    <img src="{% static "assets/diabetic_ret_color_1.jpg" %}" style="height: 165px;"
+                         alt="Professional staff" class="hov-img-bottom img-fluid">
+                    <div class="hov-img-top hov-img-slideup">
+                        <div class="hov-img-text">
+                            <h5>Floating spots</h5>
+                            <p>Bleeding from abnormal retinal blood vessels can cause the appearance of “floating”
+                                spots.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hov-img">
+                    <img src="{% static "assets/blurry_vision.jpg" %}" style="height: 159px; width: 191px;"
+                         alt="Professional staff" class="hov-img-bottom img-fluid">
+                    <div class="hov-img-top hov-img-slideup">
+                        <div class="hov-img-text">
+                            <h5>Blurry Vision</h5>
+                            <p>The disease often progresses unnoticed until it affects vision</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-7">
+                <div class="row ">
+                    <div class="restaurant-history slideanim text-center">
+                        <h3 class="section-heading">What is Diabetic Retinopathy?</h3>
+                        <p class="about-history first">
+                            Diabetic retinopathy affects blood vessels in the light-sensitive tissue called the retina
+                            that lines the back of the eye. It is the most common cause of vision loss among people with
+                            diabetes and the leading cause of vision impairment and blindness among working-age
+                            adults.<br>
+                            Diabetic eye disease is a group of eye conditions that can affect people with diabetes.<br>
+                            All forms of diabetic eye disease have the potential to cause severe vision loss and
+                            blindness.
+                        </p>
+
+                        <button type="button" class="btn more" id="more" data-toggle="collapse" data-target="#demo">What
+                            causes diabetic retinopathy ?!
+                        </button>
+                        <div id="demo" class="collapse">
+                            <p class="about-history">
+                                Chronically high blood sugar from diabetes is associated with damage to the tiny blood
+                                vessels in the retina, leading to diabetic retinopathy.<br>
+                                The retina detects light and converts it to signals sent through the optic nerve to the
+                                brain. Diabetic retinopathy can cause blood vessels in the retina to leak fluid or
+                                hemorrhage (bleed), distorting vision.<br>
+                                In its most advanced stage, new abnormal blood vessels proliferate (increase in number)
+                                on the surface of the retina, which can lead to scarring and cell loss in the retina.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-menu bg-section" id="menu">
+    <div class="container-fluid">
+        <h1 class="container-h1">Phases of Diabetic Retinopathy</h1>
+        <div class="row">
+
+            <!-- Nav pills -->
+
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#breakfast">Mild nonproliferative</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#dinner">Moderate nonproliferative</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#dessert">Severe nonproliferative</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#salads">Proliferative(PDR)</a>
+                </li>
+            </ul>
+
+
+            <div class="tab-content slideanim">
+                <div id="breakfast" class="tab-pane fade show active">
+                    <div class="row">
+                        <div class="col-sm-7">.
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                  <span class="badge" style="float: left;">1</span>
+                                    <span style="float: right; margin-right: 322px;"><h4 class="list-group-item-heading">Mild nonproliferative retinopathy</h4></span>
+                                  <br><br><p class="list-group-item-text">
+                                  Small areas of balloon-like swelling in the retina’s tiny blood vessels, called microaneurysms, occur at this earliest stage of the disease. These microaneurysms may leak fluid into the retina.
+                                  </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="right-cover">
+                                <h3>Phase 1</h3>
+                                <img src="{% static 'assets/1.jpg' %}" class="menu-img img-fluid" alt="breakfast-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dinner" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <ul class="list-group">
+
+                                <li class="list-group-item">
+                                  <span class="badge" style="float: left;">2</span>
+                                    <span style="float: right; margin-right: 280px;"><h4 class="list-group-item-heading">Moderate nonproliferative retinopathy</h4></span>
+                                  <br><br><p class="list-group-item-text">
+                                  As the disease progresses, blood vessels that nourish the retina may swell and distort. They may also lose their ability to transport blood. Both conditions cause characteristic changes to the appearance of the retina and may contribute to DME.
+                                  </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="right-cover">
+                                <h3>Phase 2</h3>
+                                <img src="{% static 'assets/2.jpg' %}" class="menu-img img-fluid" alt="brekfast-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dessert" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                   <span class="badge" style="float: left;">3</span>
+                                    <span style="float: right; margin-right: 305px;"><h4 class="list-group-item-heading">Severe nonproliferative retinopathy</h4></span>
+                                  <br><br><p class="list-group-item-text">
+                                  Many more blood vessels are blocked, depriving blood supply to areas of the retina. These areas secrete growth factors that signal the retina to grow new blood vessels.
+                                  </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="right-cover">
+                                <h3>Phase 3</h3>
+                                <img src="{% static 'assets/3.jpg' %}" class="menu-img img-fluid" alt="phase-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="salads" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span class="badge" style="float: left;">4.</span>
+                                    <span style="float: right; margin-right: 273px;"><h4 class="list-group-item-heading">Proliferative diabetic retinopathy (PDR)</h4></span>
+                                    <br><br><p class="list-group-item-text">
+                                         At this advanced stage, growth factors secreted by the retina trigger the proliferation of new blood vessels, which grow along the inside surface of the retina and into the vitreous gel, the fluid that fills the eye. The new blood vessels are fragile, which makes them more likely to leak and bleed. Accompanying scar tissue can contract and cause retinal detachment—the pulling away of the retina from underlying tissue, like wallpaper peeling away from a wall. Retinal detachment can lead to permanent vision loss.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="right-cover">
+                                <h3>Phase 4</h3>
+                                <img src="{% static 'assets/3.jpg' %}" class="menu-img img-fluid" alt="brekfast-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-testimonials" id="testimonials">
+        <div class="container-fluid">
+            <h3 class="">Who is at risk for diabetic retinopathy?</h3>
+            <hr class="hr-testimonials">
+            <div class="row slideanim">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ul>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                      <div class="carousel-item active">
+                            <h4>People with all types of diabetes (type 1, type 2, and gestational) are at risk for diabetic retinopathy.<br>
+                             Risk increases the longer a person has diabetes.</h4>
+                             <br>
+                      </div>
+
+
+                        <div class="carousel-item">
+                            <h4>Americans diagnosed with diabetes have some stage of diabetic retinopathy, although only about half are aware of it.</h4>
+                            <br>
+                        </div>
+
+                      <div class="carousel-item">
+                            <h4>Women who develop or have diabetes during pregnancy may have rapid onset or worsening of diabetic retinopathy.</h4>
+                            <br>
+                      </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="bg-service bg-section" id="service">
+        <div class="container-fluid text-center">
+            <h1 class="container-h1">Services</h1>
+
+            <div class="row service-round-3 slideanim">
+                <div class="col-sm-4 text-center round">
+                    <div class="service-round b-party">
+                        <i class="fa fa-4x fa fa-heartbeat sr-icons"></i>
+                    </div>
+                    <h4>We care about u</h4>
+                    <p>For more information please contact us.</p>
+                </div>
+                <div class="col-sm-4 text-center round">
+                    <div class="service-round wedding">
+                        <i class="fa fa-4x fa fa-medkit sr-icons"></i>
+                    </div>
+                    <h4>Health care</h4>
+                    <p>For more information please contact us</p>
+                </div>
+                <div class="col-sm-4 text-center round">
+                    <div class="service-round b-dinner">
+                        <i class="fa fa-4x fa fa-stethoscope  sr-icons"></i>
+                    </div>
+                    <h4>Online eye analyses</h4>
+                    <p>For more information please contact us.</p>
+                </div>
+            </div>
+            <a href="#contact" class="btn">Contact us</a>
+        </div>
+    </section>
+
+<section class="bg-staff" id="staff">
+        <div class="container-fluid">
+            <h3>Our staff</h3>
+            <hr class="hr-h3s">
+                <div class="row text-center slideanim thumbnail-row">
+                    <div class="col-sm-3">
+                        <div class="staff">
+                            <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952566/new/manager.jpg" class="" alt="chef-img" style="width:170px; height: 170px">
+                            <h5 class="">John Johnson</h5>
+                            <h6>Manager</h6>
+                        </div>
+                     </div>
+                     <div class="col-sm-3">
+                        <div class="staff">
+                            <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952565/new/chef1.jpg" class="" alt="chef-img" style="width:170px; height: 170px">
+                            <h5 class="">Anna Schmidt</h5>
+                            <h6>Chef</h6>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="staff">
+                            <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952566/new/chef3.jpg" class="" alt="chef-img" style="width:170px; height: 170px">
+                            <h5 class="">Ivan Gonzales</h5>
+                            <h6>Chef</h6>
+                        </div>
+                    </div>
+                      <div class="col-sm-3">
+                        <div class="staff">
+                            <img src="https://res.cloudinary.com/dbte0ueti/image/upload/v1536952566/new/chef2.jpg" class="" alt="chef-img" style="width:170px; height: 170px">
+                            <h5 class="">Joseph Martinez</h5>
+                            <h6>Chef</h6>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+<section class="bg-contact bg-section" id="contact">
+        <div class="container-fluid">
+            <h1 class="container-h1">Contact us</h1>
+            <div class="row slideanim">
+                <div class="col-md-6 col-sm-6 contact-left">
+                    <div class="left-box">
+                        <address class="contact">
+                            <span class="span-contact">Call:</span>
+                            <br>
+                            +091 1234 5678
+                            <br>
+                            <span class="span-contact">Email:</span>
+                            <br>
+                            northstreet@gmail.com
+                            <br>
+                            <span class="span-contact">Visit:</span>
+                            <br>
+                            22, Northstreet Road
+                            <br>
+                            Melbourne, Victoria
+                            <br>
+                            Australia
+                        </address>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 contact-right" >
+
+                            <form novalidate action="mailto:anttnew@gmmmail.com" name="frm" method="post">
+                                 <div class="form-group has-feedback">
+                                    <label class="sr-only">First name:</label>
+                                    <input type="text" name="name" class="form-control" placeholder="First name" required>
+
+                                </div>
+                                 <div class="form-group has-feedback">
+                                    <label class="sr-only">Last name:</label>
+                                    <input type="text" name="surname" class="form-control" placeholder="Last name" required>
+
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label class="sr-only">Email:</label>
+                                    <input type="email" name="email" class="form-control"  placeholder="Email" required>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" name="comment" for="comment">Comment:</label>
+                                    <textarea class="form-control" rows="5" id="comment" placeholder="Description"></textarea>
+                                </div>
+                                <div class="contact-buttons pull-left">
+                                    <input type="submit" name="submit"  value="Send" />
+                                    <input type="reset" value="Reset" />
+                                </div>
+                            </form>
+
+                </div>
+            </div>
+            <div class="row">
+                <div id="googleMap" style="height:300px;width:100%;"></div>
+
+                <!-- Add Google Maps -->
+                <script src="http://maps.googleapis.com/maps/api/js"></script>
+                <script>
+                var myCenter = new google.maps.LatLng(-37.817110, 144.959128);
+
+                function initialize() {
+                var mapProp = {
+                  center:myCenter,
+                  zoom:12,
+                  scrollwheel:false,
+                  draggable:false,
+                  mapTypeId:google.maps.MapTypeId.ROADMAP
+                  };
+
+                var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                var marker = new google.maps.Marker({
+                  position:myCenter,
+                  });
+
+                marker.setMap(map);
+                }
+
+                google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
+            </div>
+        </div>
+    </section>
+
+<footer class="-bg-footer" id="footer">
+        <div class="container-fluid">
+            <div class="row footer-align">
+                <div class="col-md-4 col-sm-4">
+                    <h5>Northstreet</h5>
+                    <hr class="hr-foot">
+                    <div class="footer-items">
+                        <p class="footer">
+                            The EU-27 has an estimated 1.6m businesses involved in 'accommodation and food services', more than 75% of which are small and medium enterprises.
+                        </p>
+                        <ul class="social-networks">
+                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h5>Our contact</h5>
+                    <hr class="hr-foot">
+                    <div class="footer-items">
+                        <address>
+                                22, Northstreet Road
+                                <br>
+                                Melbourne, Victoria
+                                <br>
+                                Australia
+                                <br>
+                                <i class="fa fa-phone address"></i> +091 1234 5678
+                                <br>
+                                <i class="fa fa-fax address"></i> +876 5432 1234
+                                <br>
+                                <i class="fa fa-envelope address"></i> <a href="mailto:northstreet@gmail.com">northstreet@gmail.com</a>
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h5>Open hours</h5>
+                    <hr class="hr-foot">
+                    <div class="footer-items">
+                        <ul>
+                            <li>Mon-Fri: 08:00-22:00</li>
+                            <li>Sat    : 09:00-22:00</li>
+                            <li>Sun    : 09:00-16:00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="to-top" href="#myPage" title="toTop">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </footer>
+
+    <div class="footer-copyright">
+            <p>&copy 2019 Copyright by  <a href="https://github.com/omardiaa97"> https://github.com/omardiaa97</a></p>
+    </div>
+
+
+<script src="{% static '/script/app.js' %}"></script>
+</body>
+</html>
